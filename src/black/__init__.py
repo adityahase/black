@@ -2089,7 +2089,7 @@ class LineGenerator(Visitor[Line]):
         if prev_siblings_are(
             leaf.parent, [None, token.NEWLINE, token.INDENT, syms.simple_stmt]
         ) and is_multiline_string(leaf):
-            prefix = "    " * self.current_line.depth
+            prefix = "	" * self.current_line.depth
             docstring = fix_docstring(leaf.value[3:-3], prefix)
             leaf.value = leaf.value[0:3] + docstring + leaf.value[-3:]
             normalize_string_quotes(leaf)
